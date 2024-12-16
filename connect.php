@@ -10,8 +10,5 @@
     // kiểm tra xem đã kết nối hay chưa
     if($conn){
          mysqLi_query($conn, "SET NAMES 'utf8'");
-         echo "Connection succeeded";
-    }else{
-        echo "connection failed";
     }
 ?>
