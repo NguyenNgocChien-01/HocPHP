@@ -2,17 +2,16 @@
     // kết nối CSDL
     include "connect.php";
 
-    $id="";
-    $account= 'admin';
-    $passwrd='123456';
-    $level = 1;
-    
-    $sql = "INSERT INTO thanhvien (id, account, passwrd, level) 
-            VALUES('$id', '$account', '$passwrd', '$level');
-    ";
+    $sql ="SELECT * FROM  thanhvien";
 
-    mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql);
 
 
+    if (mysqli_num_rows($result) > 0){
+       // chuyển bảng thành array
+        while( $row = mysqli_fetch_array($result)){ // mỗi dòng là 1 array
+            echo $row['id']. " | " .$row['account'] . " | " .$row['passwrd'] .  " | " .$row['level'] .  "<br>";
+        }
+    }
 ?>
 
