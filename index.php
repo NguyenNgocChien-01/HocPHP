@@ -12,8 +12,8 @@
 ?>
 
  <h1> 
-
- <?php  echo $row['account'];
+ <?php 
+     echo $row['account'];
          echo "<br>";
         echo $row['passwrd'];
   ?>
@@ -22,3 +22,5 @@
 <?php 
     } // chú ý dấu ngoặc của while
 ?>
+
+
