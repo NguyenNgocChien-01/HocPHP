@@ -2,9 +2,15 @@
     // kết nối CSDL
     include "connect.php";
 
-    // xóa dữ liệu
+    // update dữ liệu
 
-    $sql = "DELETE FROM thanhvien WHERE id ='2' ";
+    $id = 2 ;
+    $account = 'Huong' ;
+    $passwrd = 'Huong' ;
+    $level = 2;
+
+    $sql = "UPDATE thanhvien SET id='$id', account='$account', 
+     passwrd = '$passwrd' , level='$level' WHERE  id = '1' ";
     mysqli_query($conn, $sql);
 ?>
 
