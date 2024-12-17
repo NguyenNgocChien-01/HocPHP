@@ -4,7 +4,7 @@
     $server = "localhost";
     $user ="root"; 
     $passwd="";
-    $database="mydatabase";
+    $database="dulieuweb";
     $conn = new mysqLi($server, $user, $passwd, $database);
 
     // kiểm tra xem đã kết nối hay chưa

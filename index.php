@@ -2,35 +2,27 @@
     // kết nối CSDL
     include "connect.php";
 
-    if(isset($_POST['btn'])){
+
+    //  // câu lệnh tạo CSDL
+    // $sql = " CREATE DATABASE dulieuweb ";
 
 
-            // câu lệnh tạo CSDL
-    $sql = " CREATE DATABASE " . $_POST['database'];
+    // Câu lệnh tạo bảng
+    $sql = "CREATE TABLE thanhvien (
+        id          INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        account     VARCHAR(30) NOT NULL,
+        passwrd     VARCHAR(30) NOT NULL,
+        level       INT(6)
+    )";
 
-    // chạy thành công tạo ra 1 database mới
-    if(mysqli_query($conn, $sql)){
-        echo "create database successfully";
+    // thực thi truy vấn
+    if($conn->query($sql) == TRUE){
+        echo "Tao bang thanh cong";
     }else{
-        echo "create database failed";
+        echo "tao bang khong thanh cong";
     }
-
-    }
+    
+    
     
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="index.php" method="post">
-        Tên CSDL: <input type="text" name="database">
-        <input type="submit" name="btn" value="Tạo CSDL">
-    </form>
-</body>
-</html>
