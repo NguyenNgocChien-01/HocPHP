@@ -1,4 +1,4 @@
-
+<h1> Bài học số 2</h1>
 
 <ul>
     <li><a href="index.php?page_layout=trangchu">Trang chủ</a></li>
