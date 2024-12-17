@@ -2,15 +2,23 @@
     // kết nối CSDL
     include "connect.php";
 
-    // update dữ liệu
+    // chèn thẻ HTML vào mySQL  
+    $sql = "SELECT * FROM thanhvien";
 
-    $id = 2 ;
-    $account = 'Huong' ;
-    $passwrd = 'Huong' ;
-    $level = 2;
+    $result = mysqLi_query($conn, $sql);
 
-    $sql = "UPDATE thanhvien SET id='$id', account='$account', 
-     passwrd = '$passwrd' , level='$level' WHERE  id = '1' ";
-    mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_array($result))
+    {
 ?>
 
+ <h1> 
+
+ <?php  echo $row['account'];
+         echo "<br>";
+        echo $row['passwrd'];
+  ?>
+ </h1>
+    
+<?php 
+    } // chú ý dấu ngoặc của while
+?>
